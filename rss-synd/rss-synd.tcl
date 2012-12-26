@@ -48,14 +48,22 @@
 namespace eval ::rss-synd {
 	variable rss
 	variable default
-
+	
+	# example of subreddit
 	set rss(example) {
 		"channels"	"#channel" # space separated list of channels to post to
 		"url"           "http://reddit.com/r/example/new.rss"
 		"database"	"/eggdrop/scripts/feeds/example.db" # where to store the rss database. make sure it is writable.
-	}
+	}	
 	
-	# add more subreddits here...
+	# example of non-reddit site
+	set rss(ekstrabladet) {
+		"channels"      "#channel"
+		"url"           "http://ekstrabladet.dk/rss2/?mode=normal&submode=nyheder"
+		"database"      "/eggdrop/scripts/feeds/ekstrabladet.db"
+		"output"        "\\\[\002ekstrabladet\002\\\] @@item!title@@ \[shortlink @@item!link@@\]"
+		"trigger"       "!@@feedid@@"
+	}
 
 	set default {	
 		"announce-output"	3
@@ -63,14 +71,14 @@ namespace eval ::rss-synd {
 		"remove-empty"		1
 		"trigger-type"		0:2
 		"announce-type"		0
-		"max-depth"			5
+		"max-depth"		5
 		"evaluate-tcl"		1
 		"update-interval"	30
 		"output-order"		0
-		"timeout"			60000
-		"channels"			"#channel1"
-		"trigger"			"!rss @@feedid@@"
-		"output"			"\\\[\002/r/\[reddittwo @@item!link@@\]\002\\\] @@item!title@@ - \[reddit @@item!link@@\]"
+		"timeout"		60000
+		"channels"		"#channel1"
+		"trigger"		"!rss @@feedid@@"
+		"output"		"\\\[\002/r/\[reddittwo @@item!link@@\]\002\\\] @@item!title@@ - \[reddit @@item!link@@\]"
 		"user-agent"		"Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11"
 	}
 }
