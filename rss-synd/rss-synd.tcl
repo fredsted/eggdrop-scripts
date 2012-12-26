@@ -49,10 +49,10 @@ namespace eval ::rss-synd {
 	variable rss
 	variable default
 
-	set rss(denmark) {
-		"channels"		"#channel" # space separated list of channels to post to
+	set rss(example) {
+		"channels"	"#channel" # space separated list of channels to post to
 		"url"           "http://reddit.com/r/example/new.rss"
-		"database"		"/eggdrop/scripts/feeds/example.db" # where to store the rss database. make sure it is writable.
+		"database"	"/eggdrop/scripts/feeds/example.db" # where to store the rss database. make sure it is writable.
 	}
 	
 	# add more subreddits here...
