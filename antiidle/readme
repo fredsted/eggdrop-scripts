@@ -1,0 +1,12 @@
+Anti-idle script for Eggdrop. Kicks non-voiced/opped users that
+haven’t been doing anything on the channel for a configurable
+amount of time.
+
+
+How to use:
+
+1) Enable on channels you wish to use it on:
+	.chanset #example +idlekick
+
+2) Configure how long users are allowed to idle (in minutes)
+	.chanset #example idlekick-time 15
